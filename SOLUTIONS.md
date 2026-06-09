@@ -117,3 +117,11 @@
 - Files Changed: .git/config, SOLUTIONS.md
 - Status: Resolved
 - Verification: `git config user.name` and `git config user.email` returned configured values after the update.
+
+## [2026-06-08 20:53] GitHub Pages API Payload Rejected
+- Problem: The first attempt to enable GitHub Pages returned HTTP `422` with “Invalid input: data matches no possible input.”
+- Root Cause: The API call used an invalid payload shape for the Pages `source` object.
+- Solution: Retried the Pages enablement call with nested `source[branch]` and `source[path]` fields.
+- Files Changed: SOLUTIONS.md
+- Status: Resolved
+- Verification: GitHub Pages enablement returned `html_url` as `https://anntropea-oss.github.io/personal-branding/` with HTTPS enforced.
