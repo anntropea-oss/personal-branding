@@ -131,5 +131,5 @@
 - Root Cause: The site was deployed from a project repository named `personal-branding` instead of the GitHub user-site repository named `anntropea-oss.github.io`.
 - Solution: Updated canonical, Open Graph, JSON-LD, robots, sitemap, and README URLs to `https://anntropea-oss.github.io/`; renamed the GitHub repository to `anntropea-oss.github.io`.
 - Files Changed: index.html, robots.txt, sitemap.xml, README.md, SOLUTIONS.md
-- Status: Open
-- Verification: Pending repo rename, push, and live root URL verification.
+- Status: Resolved
+- Verification: The renamed GitHub Pages user site returns `200` at `https://anntropea-oss.github.io/`; root hero asset, `robots.txt`, and `sitemap.xml` also return `200`, and live metadata no longer includes `/personal-branding/`.
