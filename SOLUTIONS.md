@@ -125,3 +125,11 @@
 - Files Changed: SOLUTIONS.md
 - Status: Resolved
 - Verification: GitHub Pages enablement returned `html_url` as `https://anntropea-oss.github.io/personal-branding/` with HTTPS enforced.
+
+## [2026-06-08 21:00] GitHub Pages URL Includes Project Path
+- Problem: The deployed site URL included `/personal-branding/`, but the desired public URL is the root GitHub Pages address without that path.
+- Root Cause: The site was deployed from a project repository named `personal-branding` instead of the GitHub user-site repository named `anntropea-oss.github.io`.
+- Solution: Updated canonical, Open Graph, JSON-LD, robots, sitemap, and README URLs to `https://anntropea-oss.github.io/`; renamed the GitHub repository to `anntropea-oss.github.io`.
+- Files Changed: index.html, robots.txt, sitemap.xml, README.md, SOLUTIONS.md
+- Status: Open
+- Verification: Pending repo rename, push, and live root URL verification.

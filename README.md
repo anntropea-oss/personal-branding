@@ -1,6 +1,6 @@
 # Ann Tropea Professional Website
 
-A standalone static website for Ann Tropea's professional work across editorial leadership, communications strategy, technical communication, AI literacy, consulting services, higher education, and public-impact storytelling. The structure borrows the useful process from the referenced Codex project: a separate web property, SEO-ready metadata, launch verification, and a written problem/solution trail.
+A standalone static website for Ann Tropea's professional work across editorial leadership, communications strategy, technical communication, AI literacy, consulting services, higher education, and public-impact storytelling. The site is deployed as the GitHub Pages user site at `https://anntropea-oss.github.io/`.
 
 ## Local Preview
 
