@@ -149,3 +149,43 @@
 - Files Changed: index.html, favicon.svg, SOLUTIONS.md
 - Status: Resolved
 - Verification: Local and live `favicon.svg` checks returned `200 image/svg+xml`; the live homepage includes the favicon link.
+
+## [2026-06-09 09:32] Local Preview Server Stopped During Portfolio Update
+- Problem: The local homepage check for `http://localhost:4173/` returned status `000` while verifying the portfolio/content update.
+- Root Cause: The local static preview server was not running on port 4173.
+- Solution: Restarted the local static server before continuing verification.
+- Files Changed: SOLUTIONS.md
+- Status: Resolved
+- Verification: Follow-up local HTTP checks returned `200` for the homepage after the server was restarted.
+
+## [2026-06-09 09:32] Missing Public Portfolio Source Links
+- Problem: Some requested portfolio areas did not have discoverable public source URLs during web verification, including the WMBC AA Batteries show archive, preflight workshop materials, shareable publication spreads, dissertation/thesis editing examples, and The Intimacy Gap project.
+- Root Cause: Public URLs for those specific samples were not available in the provided materials or discoverable through search.
+- Solution: Added a visible “Links to add next” block to the portfolio section so missing sample URLs are flagged clearly while verified links are used where available.
+- Files Changed: index.html, styles.css, SOLUTIONS.md
+- Status: Workaround
+- Verification: The updated portfolio markup includes verified public links plus a dedicated list of sample links still needed.
+
+## [2026-06-09 09:33] Python HTTPS Link Checker Certificate Failure
+- Problem: Python `urllib` link verification failed for every new HTTPS portfolio URL with `CERTIFICATE_VERIFY_FAILED`.
+- Root Cause: The local Python SSL certificate store could not verify the remote HTTPS certificate chains in this environment.
+- Solution: Re-ran the external URL checks with `curl -L`, which successfully verified the linked pages.
+- Files Changed: SOLUTIONS.md
+- Status: Workaround
+- Verification: `curl -L` returned `200` for the Computational History essay, UMBC coverage, Retriever author archive, Seapower sample, Apple Podcasts page, and UMBC profile.
+
+## [2026-06-09 09:34] Sitemap Last Modified Date Stale
+- Problem: `sitemap.xml` still listed `2026-06-08` after the homepage content was updated on June 9, 2026.
+- Root Cause: The sitemap date was not automatically updated when editing the static page.
+- Solution: Updated the homepage `<lastmod>` value to `2026-06-09`.
+- Files Changed: sitemap.xml, SOLUTIONS.md
+- Status: Resolved
+- Verification: Re-read `sitemap.xml` and confirmed the new `lastmod` date is present.
+
+## [2026-06-09 09:35] Multi-URL Curl Verification Printed Response Body
+- Problem: A combined `curl` command used for local verification printed the sitemap XML response body into the command output.
+- Root Cause: Multiple URLs were passed to one `curl` invocation without isolating each response body.
+- Solution: Re-ran the local homepage and sitemap checks as separate quiet requests.
+- Files Changed: SOLUTIONS.md
+- Status: Resolved
+- Verification: Separate `curl` checks returned concise `200` status and content-type output for both local URLs.
