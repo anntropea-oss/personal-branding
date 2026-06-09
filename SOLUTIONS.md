@@ -189,3 +189,11 @@
 - Files Changed: SOLUTIONS.md
 - Status: Resolved
 - Verification: Separate `curl` checks returned concise `200` status and content-type output for both local URLs.
+
+## [2026-06-09 09:36] GitHub Pages Poll Used Read-Only Shell Variable
+- Problem: The first GitHub Pages polling command failed with `zsh: read-only variable: status`.
+- Root Cause: `status` is a reserved/read-only variable name in zsh.
+- Solution: Reran the Pages polling command using a non-reserved variable name.
+- Files Changed: SOLUTIONS.md
+- Status: Resolved
+- Verification: The corrected polling command ran and reported the GitHub Pages build status.
