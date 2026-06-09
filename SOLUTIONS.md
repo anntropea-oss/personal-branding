@@ -148,4 +148,4 @@
 - Solution: Added a lightweight SVG favicon and linked it from the document head.
 - Files Changed: index.html, favicon.svg, SOLUTIONS.md
 - Status: Resolved
-- Verification: Local `favicon.svg` returned `200 image/svg+xml`; live verification pending deployment.
+- Verification: Local and live `favicon.svg` checks returned `200 image/svg+xml`; the live homepage includes the favicon link.
