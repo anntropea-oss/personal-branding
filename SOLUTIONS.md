@@ -197,3 +197,11 @@
 - Files Changed: SOLUTIONS.md
 - Status: Resolved
 - Verification: The corrected polling command ran and reported the GitHub Pages build status.
+
+## [2026-06-09 09:38] In-App Browser Route Unavailable After Deploy
+- Problem: Attempting to navigate the in-app browser to the live GitHub Pages URL failed with “No Codex browser route is available.”
+- Root Cause: Unknown; the in-app browser automation route became unavailable after prior verification.
+- Solution: Used direct HTTP verification for the live GitHub Pages URL and left the public URL available for manual opening.
+- Files Changed: SOLUTIONS.md
+- Status: Workaround
+- Verification: Live HTTP checks returned `200`, and the deployed homepage contained the new portfolio content.
