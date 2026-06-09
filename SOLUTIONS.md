@@ -133,3 +133,11 @@
 - Files Changed: index.html, robots.txt, sitemap.xml, README.md, SOLUTIONS.md
 - Status: Resolved
 - Verification: The renamed GitHub Pages user site returns `200` at `https://anntropea-oss.github.io/`; root hero asset, `robots.txt`, and `sitemap.xml` also return `200`, and live metadata no longer includes `/personal-branding/`.
+
+## [2026-06-08 21:08] Resume PDF Not Yet Live During Pages Build
+- Problem: Immediately after pushing the resume/GitHub update, the live homepage returned `200` but the new resume PDF URL returned `404`.
+- Root Cause: GitHub Pages was still building the new commit, so the newly added PDF asset had not propagated yet.
+- Solution: Waited for the GitHub Pages build to finish, then rechecked the live resume PDF URL.
+- Files Changed: SOLUTIONS.md
+- Status: Resolved
+- Verification: GitHub Pages status changed to `built`; the live resume PDF returned `200 application/pdf`, and the live homepage included the GitHub section and resume link.
