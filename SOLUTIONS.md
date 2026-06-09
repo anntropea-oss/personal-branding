@@ -237,3 +237,11 @@
 - Files Changed: SOLUTIONS.md
 - Status: Resolved
 - Verification: The port cleanup command completed successfully.
+
+## [2026-06-09 09:57] Pages Build Poll Timed Out
+- Problem: The first post-push GitHub Pages polling loop reached its retry limit while the deployment still reported `building`.
+- Root Cause: The Pages build took longer than the polling loop allowed.
+- Solution: Ran a follow-up status check with a longer wait window.
+- Files Changed: SOLUTIONS.md
+- Status: Resolved
+- Verification: The follow-up Pages status check returned `built`.
