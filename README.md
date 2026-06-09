@@ -14,8 +14,9 @@ Then open `http://localhost:4173`.
 
 - Replace the GitHub Pages URL in `index.html`, `robots.txt`, and `sitemap.xml` if moving to a custom domain.
 - Add a preferred contact email if the contact button should be email-based instead of LinkedIn-based.
-- Add real professional links, case studies, talks, writing samples, edited publications, podcast samples, GitHub projects, and social profiles.
-- Add a resume PDF if the `Request Resume` button should become a direct download.
+- Add real professional links, case studies, talks, writing samples, edited publications, and podcast samples.
+- Update the resume PDF in `assets/ann-tropea-resume-2027.pdf` when a newer version is ready.
+- Refresh the GitHub project list when new public repositories should be featured.
 - Replace portfolio request links with public sample URLs or local PDFs when ready.
 - Replace or deepen the homepage copy once the strongest role target is chosen.
 - Regenerate `sitemap.xml` or update `lastmod` on every content release.

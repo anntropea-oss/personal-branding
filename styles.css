@@ -268,7 +268,8 @@ h3 {
 
 .portfolio-grid,
 .service-grid,
-.qualification-grid {
+.qualification-grid,
+.repo-grid {
   display: grid;
   gap: 18px;
 }
@@ -279,7 +280,8 @@ h3 {
 
 .portfolio-card,
 .service-card,
-.qualification-grid article {
+.qualification-grid article,
+.repo-card {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -299,7 +301,9 @@ h3 {
   text-decoration: none;
 }
 
-.portfolio-card a:hover {
+.portfolio-card a:hover,
+.repo-card a:hover,
+.text-link:hover {
   text-decoration: underline;
 }
 
@@ -327,6 +331,37 @@ h3 {
 .resume {
   background: #edf2ef;
   border-top: 1px solid var(--line);
+}
+
+.github {
+  background: #f7f4ed;
+  border-top: 1px solid var(--line);
+}
+
+.repo-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.repo-card {
+  display: grid;
+  align-content: space-between;
+  min-height: 300px;
+}
+
+.repo-card a,
+.text-link {
+  color: var(--forest);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.repo-card a {
+  margin-top: 22px;
+}
+
+.text-link {
+  display: inline-flex;
+  margin-top: 28px;
 }
 
 .resume-actions {
@@ -452,7 +487,8 @@ h3 {
   .work-grid,
   .lesson-columns,
   .portfolio-grid,
-  .qualification-grid {
+  .qualification-grid,
+  .repo-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -510,7 +546,8 @@ h3 {
   .work-grid,
   .lesson-columns,
   .portfolio-grid,
-  .qualification-grid {
+  .qualification-grid,
+  .repo-grid {
     grid-template-columns: 1fr;
   }
 
