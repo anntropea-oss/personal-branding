@@ -141,3 +141,11 @@
 - Files Changed: SOLUTIONS.md
 - Status: Resolved
 - Verification: GitHub Pages status changed to `built`; the live resume PDF returned `200 application/pdf`, and the live homepage included the GitHub section and resume link.
+
+## [2026-06-08 21:09] Missing Favicon
+- Problem: Local browser verification requested `/favicon.ico` and received `404`.
+- Root Cause: The site did not declare or provide a favicon.
+- Solution: Added a lightweight SVG favicon and linked it from the document head.
+- Files Changed: index.html, favicon.svg, SOLUTIONS.md
+- Status: Resolved
+- Verification: Local `favicon.svg` returned `200 image/svg+xml`; live verification pending deployment.
