@@ -294,7 +294,7 @@ h3 {
   min-height: 350px;
 }
 
-.portfolio-card a {
+.portfolio-card > a {
   margin-top: 24px;
   color: var(--forest);
   font-weight: 900;
@@ -313,6 +313,19 @@ h3 {
   font-size: 0.76rem;
   font-weight: 900;
   text-transform: uppercase;
+}
+
+.sample-links {
+  display: grid;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.sample-links a {
+  color: var(--forest);
+  font-weight: 900;
+  line-height: 1.25;
+  text-decoration: none;
 }
 
 .links-needed {

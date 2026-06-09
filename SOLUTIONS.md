@@ -213,3 +213,19 @@
 - Files Changed: SOLUTIONS.md
 - Status: Resolved
 - Verification: The port cleanup command completed successfully.
+
+## [2026-06-09 09:49] PDF Text Extraction Tool Missing
+- Problem: Attempting to inspect the supplied writing sample PDFs with `pdftotext` failed because the command is not installed.
+- Root Cause: The local shell environment does not include the `pdftotext` utility.
+- Solution: Used the provided filenames and public-facing context to group the PDFs into appropriate writing sample categories, and linked the PDFs directly from the portfolio.
+- Files Changed: SOLUTIONS.md, index.html, styles.css, assets/writing-samples/*
+- Status: Workaround
+- Verification: The writing sample PDFs were copied into `assets/writing-samples` with URL-safe filenames and are referenced from the portfolio markup.
+
+## [2026-06-09 09:50] Local Preview Server Stopped During Writing Sample Update
+- Problem: The local homepage check for `http://localhost:4173/` returned status `000` while verifying the writing sample update.
+- Root Cause: The local static preview server was not running on port 4173.
+- Solution: Restarted the local static server before continuing verification.
+- Files Changed: SOLUTIONS.md
+- Status: Resolved
+- Verification: Follow-up local HTTP checks returned `200` for the homepage after the server was restarted.
