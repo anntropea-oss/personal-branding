@@ -349,3 +349,19 @@
 - Files Changed: assets/social-preview.png, SOLUTIONS.md
 - Status: Resolved
 - Verification: Visual inspection confirmed the regenerated preview image text no longer overlaps the photo.
+
+## [2026-06-11 11:51] SEO Metadata and Structured Data Incomplete
+- Problem: The homepage had basic metadata but lacked several Google-friendly SEO signals, including fuller crawl/snippet directives, `og:url`, `og:site_name`, Twitter title/description, sitemap discovery in the document head, richer structured data, and more explicit on-page service language.
+- Root Cause: Earlier iterations prioritized launch and portfolio content over comprehensive SEO implementation.
+- Solution: Added expanded robots/googlebot directives, canonical and sitemap signals, richer Open Graph/Twitter metadata, JSON-LD `WebSite`, `ProfilePage`, and `Person` structured data, image sitemap entries, and natural visible copy for editorial consulting, communications strategy, technical communication, legal writing, podcast production, thesis/dissertation editing, and print publication consulting.
+- Files Changed: index.html, sitemap.xml, SOLUTIONS.md
+- Status: Resolved
+- Verification: Parsed the JSON-LD successfully, confirmed SEO tags are present in local HTML, confirmed the sitemap contains image entries, and verified local HTTP checks for the homepage, sitemap, and social preview image returned `200`.
+
+## [2026-06-11 11:51] Google Search Console Submission Not Yet Completed
+- Problem: The site cannot be fully confirmed as submitted for Google indexing from the repo alone.
+- Root Cause: Google Search Console property verification and sitemap submission require account-level access and a verification token or DNS/HTML-file flow.
+- Solution: Left the site technically ready for Search Console submission with indexable robots directives, canonical URL, root `robots.txt`, and sitemap at `https://anntropea-oss.github.io/sitemap.xml`.
+- Files Changed: SOLUTIONS.md
+- Status: Open
+- Verification: The local `robots.txt` points to the sitemap, and `sitemap.xml` lists the canonical homepage URL.
