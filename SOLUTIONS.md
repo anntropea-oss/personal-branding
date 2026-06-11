@@ -389,3 +389,11 @@
 - Files Changed: SOLUTIONS.md
 - Status: Open
 - Verification: Live HTTP checks returned `200` for `https://anntropea-oss.github.io/`, `sitemap.xml`, `robots.txt`, and `assets/social-preview.png`.
+
+## [2026-06-11 12:06] Google Search Console Verification Tag Missing
+- Problem: Google Search Console could not verify the GitHub Pages site until its account-specific verification meta tag was present on the live homepage.
+- Root Cause: The verification token had not yet been added to the deployed site.
+- Solution: Added the provided `google-site-verification` meta tag to the homepage `<head>`.
+- Files Changed: index.html, SOLUTIONS.md
+- Status: Resolved
+- Verification: Confirmed the verification tag is present in the local homepage source before deployment.
