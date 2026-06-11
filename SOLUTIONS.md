@@ -381,3 +381,11 @@
 - Files Changed: SOLUTIONS.md
 - Status: Workaround
 - Verification: Live `curl` checks returned `200` for the homepage, sitemap, robots file, and social preview image, and earlier parser checks confirmed the JSON-LD and sitemap are valid.
+
+## [2026-06-11 11:58] Pages Status Stayed Building After SEO Log Push
+- Problem: The GitHub Pages status endpoint continued to report `building` after the SEO verification log-only push.
+- Root Cause: Unknown; the public site was already serving the deployed SEO updates successfully.
+- Solution: Verified the live homepage, sitemap, robots file, and social preview image directly instead of waiting indefinitely on the status endpoint.
+- Files Changed: SOLUTIONS.md
+- Status: Open
+- Verification: Live HTTP checks returned `200` for `https://anntropea-oss.github.io/`, `sitemap.xml`, `robots.txt`, and `assets/social-preview.png`.
