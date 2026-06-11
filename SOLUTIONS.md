@@ -245,3 +245,35 @@
 - Files Changed: SOLUTIONS.md
 - Status: Resolved
 - Verification: The follow-up Pages status check returned `built`.
+
+## [2026-06-11 11:06] Headshot Validation False Alarm
+- Problem: The `sips` metadata command reported `assets/images/ann-tropea-headshot.jpg` as “not a valid file” while preparing the headshot for the site.
+- Root Cause: Unknown; macOS `file` identified the image as valid JPEG data and the image rendered correctly in visual inspection.
+- Solution: Verified the copied asset with `file`, inspected its header bytes, and visually rendered the image before using it on the site.
+- Files Changed: assets/images/ann-tropea-headshot.jpg, SOLUTIONS.md
+- Status: Workaround
+- Verification: `file` reported valid JPEG image data and the image rendered correctly through visual inspection.
+
+## [2026-06-11 11:06] Preflight Confab Public Link Not Found
+- Problem: Web search did not find a reliable public URL for Ann Tropea’s Preflight Confab speaking engagement.
+- Root Cause: The event or speaker page may not be publicly indexed or may be private.
+- Solution: Included the speaking engagement without an external link while using verified links for other organizations and conference entries.
+- Files Changed: index.html, SOLUTIONS.md
+- Status: Workaround
+- Verification: Search results did not return a reliable Preflight Confab page; verified public links were found for Maryland Humanities, Mac’s List, and UMBC.
+
+## [2026-06-11 11:08] Sitemap Last Modified Date Stale
+- Problem: `sitemap.xml` still listed `2026-06-09` after the homepage content was updated on June 11, 2026.
+- Root Cause: The sitemap date is manually maintained for this static site.
+- Solution: Updated the homepage `<lastmod>` value to `2026-06-11`.
+- Files Changed: sitemap.xml, SOLUTIONS.md
+- Status: Resolved
+- Verification: Re-read `sitemap.xml` and confirmed the new `lastmod` date is present.
+
+## [2026-06-11 11:09] Local Preview Server Stopped During Speaking Update
+- Problem: The local homepage check for `http://localhost:4173/` returned status `000` while verifying the speaking and portfolio update.
+- Root Cause: The local static preview server was not running on port 4173.
+- Solution: Restarted the local static server before continuing browser and asset verification.
+- Files Changed: SOLUTIONS.md
+- Status: Resolved
+- Verification: Follow-up local HTTP checks returned `200` for the homepage after the server was restarted.

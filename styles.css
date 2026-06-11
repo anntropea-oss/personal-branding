@@ -71,6 +71,7 @@ a {
 }
 
 .nav-links {
+  flex-wrap: wrap;
   gap: clamp(12px, 3vw, 30px);
   font-size: 0.94rem;
 }
@@ -202,12 +203,30 @@ h3 {
   align-items: start;
 }
 
-.intro p:last-child,
+.profile-copy p,
 .contact-panel p {
   margin: 0;
   color: var(--muted);
   font-size: clamp(1.1rem, 2.2vw, 1.55rem);
   line-height: 1.55;
+}
+
+.profile-copy {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.48fr) minmax(240px, 1fr);
+  gap: clamp(20px, 4vw, 38px);
+  align-items: start;
+}
+
+.profile-copy img {
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 22%;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
 }
 
 .section-heading {
@@ -255,6 +274,7 @@ h3 {
 .process-list p,
 .lesson-columns p,
 .portfolio-card p,
+.speaking-card p,
 .service-card p,
 .site-footer {
   color: var(--muted);
@@ -269,7 +289,8 @@ h3 {
 .portfolio-grid,
 .service-grid,
 .qualification-grid,
-.repo-grid {
+.repo-grid,
+.speaking-grid {
   display: grid;
   gap: 18px;
 }
@@ -279,6 +300,7 @@ h3 {
 }
 
 .portfolio-card,
+.speaking-card,
 .service-card,
 .qualification-grid article,
 .repo-card {
@@ -294,7 +316,8 @@ h3 {
   min-height: 350px;
 }
 
-.portfolio-card > a {
+.portfolio-card > a,
+.speaking-card > a {
   margin-top: 24px;
   color: var(--forest);
   font-weight: 900;
@@ -302,6 +325,7 @@ h3 {
 }
 
 .portfolio-card a:hover,
+.speaking-card a:hover,
 .repo-card a:hover,
 .text-link:hover {
   text-decoration: underline;
@@ -328,34 +352,23 @@ h3 {
   text-decoration: none;
 }
 
-.links-needed {
-  display: grid;
-  grid-template-columns: minmax(220px, 0.74fr) minmax(280px, 1.26fr);
-  gap: clamp(24px, 5vw, 72px);
-  margin-top: 22px;
-  padding: 24px;
-  background: #fffdf8;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-}
-
-.links-needed h3 {
-  max-width: 16ch;
-}
-
-.links-needed ul {
-  margin: 0;
-  padding-left: 20px;
-  color: var(--muted);
-  line-height: 1.58;
-}
-
-.links-needed li + li {
-  margin-top: 10px;
-}
-
 .consulting {
   background: #fbfaf5;
+}
+
+.speaking {
+  background: #edf2ef;
+  border-top: 1px solid var(--line);
+}
+
+.speaking-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.speaking-card {
+  display: grid;
+  align-content: space-between;
+  min-height: 300px;
 }
 
 .service-grid {
@@ -527,7 +540,8 @@ h3 {
   .lesson-columns,
   .portfolio-grid,
   .qualification-grid,
-  .repo-grid {
+  .repo-grid,
+  .speaking-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -544,9 +558,8 @@ h3 {
   }
 
   .nav-links {
-    display: grid;
-    grid-template-columns: repeat(3, max-content);
     width: 100%;
+    flex-wrap: wrap;
     justify-content: flex-start;
     gap: 12px 24px;
   }
@@ -577,9 +590,12 @@ h3 {
 
   .intro,
   .contact,
-  .links-needed,
   .process-list li,
   .split-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-copy {
     grid-template-columns: 1fr;
   }
 
@@ -587,7 +603,8 @@ h3 {
   .lesson-columns,
   .portfolio-grid,
   .qualification-grid,
-  .repo-grid {
+  .repo-grid,
+  .speaking-grid {
     grid-template-columns: 1fr;
   }
 
