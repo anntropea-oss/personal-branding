@@ -366,9 +366,13 @@ h3 {
 }
 
 .speaking-card {
-  display: grid;
-  align-content: space-between;
+  display: flex;
+  flex-direction: column;
   min-height: 300px;
+}
+
+.speaking-card > a {
+  margin-top: auto;
 }
 
 .service-grid {
@@ -398,6 +402,12 @@ h3 {
   display: grid;
   align-content: space-between;
   min-height: 300px;
+}
+
+.repo-card h3 {
+  overflow-wrap: normal;
+  word-break: normal;
+  font-size: clamp(1.08rem, 1.6vw, 1.32rem);
 }
 
 .repo-card a,

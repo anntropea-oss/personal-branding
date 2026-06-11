@@ -309,3 +309,27 @@
 - Files Changed: SOLUTIONS.md
 - Status: Open
 - Verification: `curl` returned `200` for the live homepage, and earlier live HTML verification confirmed all PDF links include `target="_blank"` and `rel="noreferrer"`.
+
+## [2026-06-11 11:27] Repository Card Heading Orphan Letter
+- Problem: The `fantasybaseball` repository card heading wrapped with the final `l` alone on the next line in a narrow viewport.
+- Root Cause: The global heading rule used `overflow-wrap: anywhere`, which allowed single-word headings to break at any character.
+- Solution: Added a repo-card-specific heading rule that restores normal word wrapping and slightly tightens the responsive heading size inside repository cards.
+- Files Changed: styles.css, SOLUTIONS.md
+- Status: Resolved
+- Verification: Browser layout checks confirmed `fantasybaseball` no longer contains an internal line break and the page has no horizontal overflow.
+
+## [2026-06-11 11:28] Browser Verification Variable Reuse
+- Problem: The first browser verification script for the repository card fix failed with `Identifier 'viewportCap' has already been declared`.
+- Root Cause: The persistent browser JavaScript session already had a top-level binding named `viewportCap`.
+- Solution: Reran the verification using a fresh variable name.
+- Files Changed: SOLUTIONS.md
+- Status: Resolved
+- Verification: The follow-up browser verification script ran successfully.
+
+## [2026-06-11 11:31] Speaking Card Headlines Misaligned
+- Problem: Speaking section card headlines started at different vertical positions across the row.
+- Root Cause: `.speaking-card` used CSS grid with `align-content: space-between`, so each card distributed its internal rows differently based on content height and link presence.
+- Solution: Changed speaking cards to a flex column layout and pinned optional links to the bottom with `margin-top: auto`.
+- Files Changed: styles.css, SOLUTIONS.md
+- Status: Resolved
+- Verification: Browser layout checks confirmed the speaking card headline top positions match across desktop cards.
