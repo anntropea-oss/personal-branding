@@ -301,3 +301,11 @@
 - Files Changed: SOLUTIONS.md
 - Status: Workaround
 - Verification: `curl` returned the deployed homepage and confirmed the document links include `target="_blank"`.
+
+## [2026-06-11 11:25] Pages Status Stayed Building After Log-Only Push
+- Problem: A follow-up GitHub Pages status poll for the log-only `SOLUTIONS.md` deployment reached its retry limit while the Pages API continued reporting `building`.
+- Root Cause: Unknown; the public site continued serving normally and the user-facing document-link update was already live.
+- Solution: Verified the live homepage directly with `curl` and treated the unresolved Pages status as a deployment-status issue for the log-only follow-up.
+- Files Changed: SOLUTIONS.md
+- Status: Open
+- Verification: `curl` returned `200` for the live homepage, and earlier live HTML verification confirmed all PDF links include `target="_blank"` and `rel="noreferrer"`.
