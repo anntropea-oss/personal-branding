@@ -333,3 +333,11 @@
 - Files Changed: styles.css, SOLUTIONS.md
 - Status: Resolved
 - Verification: Browser layout checks confirmed the speaking card headline top positions match across desktop cards.
+
+## [2026-06-11 11:36] Preflight Confab Link Identified
+- Problem: The Preflight Confab speaking engagement was previously listed without a source link.
+- Root Cause: Initial searches did not locate the event page, and the engagement was left unlinked.
+- Solution: Updated the speaking card to identify the College Media Association Confab and linked directly to CMA’s event page for “CMA Confab - Preflighting Magazines.”
+- Files Changed: index.html, SOLUTIONS.md
+- Status: Resolved
+- Verification: The College Media Association event page loaded successfully and lists “CMA Confab - Preflighting Magazines” presented by Ann Tropea.
