@@ -285,3 +285,19 @@
 - Files Changed: SOLUTIONS.md
 - Status: Resolved
 - Verification: The corrected search command located the PDF links in `index.html`.
+
+## [2026-06-11 11:18] Pages Build Poll Timed Out After Document Link Update
+- Problem: The first post-push GitHub Pages polling loop reached its retry limit while the deployment still reported `building`.
+- Root Cause: The Pages build took longer than the polling loop allowed.
+- Solution: Ran a follow-up status check with a longer wait window before final live verification.
+- Files Changed: SOLUTIONS.md
+- Status: Resolved
+- Verification: The follow-up Pages status check returned `built`.
+
+## [2026-06-11 11:21] Python HTTPS Live Verification Certificate Failure
+- Problem: Python `urllib` live verification of `https://anntropea-oss.github.io/` failed with `CERTIFICATE_VERIFY_FAILED`.
+- Root Cause: The local Python SSL certificate store could not verify the remote HTTPS certificate chain in this environment.
+- Solution: Re-ran live verification with `curl`, which successfully fetched the deployed page.
+- Files Changed: SOLUTIONS.md
+- Status: Workaround
+- Verification: `curl` returned the deployed homepage and confirmed the document links include `target="_blank"`.
