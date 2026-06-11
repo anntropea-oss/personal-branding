@@ -277,3 +277,11 @@
 - Files Changed: SOLUTIONS.md
 - Status: Resolved
 - Verification: Follow-up local HTTP checks returned `200` for the homepage after the server was restarted.
+
+## [2026-06-11 11:14] PDF Link Search Quoting Error
+- Problem: The first attempt to search for PDF links in `index.html` failed with `zsh: unmatched "`.
+- Root Cause: The shell command used nested double quotes without proper escaping.
+- Solution: Re-ran the search with safer quoting before editing the document links.
+- Files Changed: SOLUTIONS.md
+- Status: Resolved
+- Verification: The corrected search command located the PDF links in `index.html`.
