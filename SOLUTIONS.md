@@ -365,3 +365,19 @@
 - Files Changed: SOLUTIONS.md
 - Status: Open
 - Verification: The local `robots.txt` points to the sitemap, and `sitemap.xml` lists the canonical homepage URL.
+
+## [2026-06-11 11:54] Multi-URL Curl Printed Social Preview Binary
+- Problem: A combined live verification command printed binary PNG data from `assets/social-preview.png` into the terminal output while checking deployed SEO assets.
+- Root Cause: Multiple URLs were passed to one `curl` invocation with a single output-suppression option, so one response body was not isolated.
+- Solution: Re-ran the homepage, sitemap, robots, and social preview checks as separate quiet requests and logged the verification issue.
+- Files Changed: SOLUTIONS.md
+- Status: Resolved
+- Verification: Separate `curl` requests returned clean HTTP status and content-type output for the live homepage, sitemap, robots file, and social preview image.
+
+## [2026-06-11 11:55] In-App Browser Route Unavailable During SEO Check
+- Problem: The browser-based render verification could not run because the in-app browser automation route was unavailable for the current session.
+- Root Cause: Unknown.
+- Solution: Used live HTTP checks, local JSON-LD parsing, XML sitemap parsing, and deployed HTML metadata checks as the verification path instead.
+- Files Changed: SOLUTIONS.md
+- Status: Workaround
+- Verification: Live `curl` checks returned `200` for the homepage, sitemap, robots file, and social preview image, and earlier parser checks confirmed the JSON-LD and sitemap are valid.
