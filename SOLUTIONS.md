@@ -397,3 +397,11 @@
 - Files Changed: index.html, SOLUTIONS.md
 - Status: Resolved
 - Verification: Confirmed the verification tag is present in the local homepage source before deployment.
+
+## [2026-06-11 12:10] Search Console Sitemap Could Not Fetch
+- Problem: Google Search Console showed `/sitemap.xml` with status `Couldn't fetch` immediately after submission.
+- Root Cause: Unknown; the deployed sitemap is publicly reachable and valid, so this is likely a temporary Search Console fetch or cache delay.
+- Solution: Verified the live sitemap directly from the public URL and confirmed it returns `200` with `application/xml` content and valid XML.
+- Files Changed: SOLUTIONS.md
+- Status: Workaround
+- Verification: `curl` returned `200` for `https://anntropea-oss.github.io/sitemap.xml` with no redirect, and `xmllint` validated the local sitemap XML.
