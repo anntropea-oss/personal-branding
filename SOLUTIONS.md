@@ -341,3 +341,11 @@
 - Files Changed: index.html, SOLUTIONS.md
 - Status: Resolved
 - Verification: The College Media Association event page loaded successfully and lists “CMA Confab - Preflighting Magazines” presented by Ann Tropea.
+
+## [2026-06-11 11:43] Social Preview Kicker Overlapped Image
+- Problem: The first generated social preview image had the top kicker text running into the headshot area.
+- Root Cause: The kicker text was too long for the available text column in the 1200x630 preview image.
+- Solution: Shortened the kicker line and regenerated the social preview image before wiring it into metadata.
+- Files Changed: assets/social-preview.png, SOLUTIONS.md
+- Status: Resolved
+- Verification: Visual inspection confirmed the regenerated preview image text no longer overlaps the photo.
